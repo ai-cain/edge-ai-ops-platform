@@ -60,6 +60,19 @@ In this case:
 - `POST /api/v1/ingest/ai-events`
 - `POST /api/v1/ingest/inspections`
 
+## Ready-made examples
+
+Concrete external runtime examples are included for:
+
+- Python
+- C++
+- C
+
+See:
+
+- `examples/external-runtimes/README.md`
+- `docs/external-runtime-examples.md`
+
 ## Recommendation
 
 If you already have a performant runtime in C++:

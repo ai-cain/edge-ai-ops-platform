@@ -29,6 +29,23 @@ coverage/
 .vite/
 *.tsbuildinfo
 
+# C and C++
+*.o
+*.obj
+*.so
+*.dll
+*.dylib
+*.a
+*.lib
+*.exe
+*.out
+*.app
+build/
+cmake-build-*/
+CMakeFiles/
+CMakeCache.txt
+compile_commands.json
+
 # Generated docs and local data
 site/
 postgres_data/

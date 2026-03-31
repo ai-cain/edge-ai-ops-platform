@@ -142,6 +142,7 @@ Project docs live in `docs/`.
 - [Getting started](docs/getting-started.md)
 - [Architecture](docs/architecture.md)
 - [Engine integration](docs/engine-integration.md)
+- [External runtime examples](docs/external-runtime-examples.md)
 - [Backend](docs/backend.md)
 - [Frontend](docs/frontend.md)
 - [Deployment](docs/deployment.md)
