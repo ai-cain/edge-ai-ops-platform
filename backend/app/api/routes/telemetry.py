@@ -3,7 +3,6 @@ from fastapi import APIRouter
 from app.schemas.telemetry import TelemetrySeries
 from app.services.telemetry_service import get_latest_telemetry
 
-
 router = APIRouter(prefix="/telemetry", tags=["telemetry"])
 
 

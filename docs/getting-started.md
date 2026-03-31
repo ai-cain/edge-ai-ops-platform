@@ -13,9 +13,11 @@
 
 ```bash
 make dev
+make backend-lint
 make backend-test
 make frontend-build
 make docs-serve
+make ci-local
 ```
 
 ## Services

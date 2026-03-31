@@ -1,0 +1,27 @@
+services:
+  - type: web
+    name: edge-ai-ops-backend
+    runtime: docker
+    rootDir: backend
+    plan: free
+    healthCheckPath: /health
+    envVars:
+      - key: APP_NAME
+        value: Edge AI Ops Platform API
+      - key: API_PREFIX
+        value: /api/v1
+      - key: DATABASE_URL
+        sync: false
+      - key: CORS_ORIGINS
+        value: "[\"https://edge-ai-ops-frontend.onrender.com\"]"
+
+  - type: static
+    name: edge-ai-ops-frontend
+    rootDir: frontend
+    buildCommand: npm ci && npm run build
+    staticPublishPath: dist
+    envVars:
+      - key: VITE_API_BASE_URL
+        value: https://edge-ai-ops-backend.onrender.com/api/v1
+      - key: VITE_WS_BASE_URL
+        value: wss://edge-ai-ops-backend.onrender.com

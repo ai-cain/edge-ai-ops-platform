@@ -3,7 +3,6 @@ from fastapi import APIRouter
 from app.schemas.ai_event import AIEvent
 from app.services.ai_events_service import list_ai_events
 
-
 router = APIRouter(prefix="/ai-events", tags=["ai-events"])
 
 

@@ -1,6 +1,6 @@
 DC = docker compose
 
-.PHONY: dev down logs backend-shell frontend-shell backend-test frontend-install frontend-build docs-install docs-build docs-serve
+.PHONY: dev down logs backend-shell frontend-shell backend-lint backend-test frontend-install frontend-build docs-install docs-build docs-serve ci-local
 
 dev:
 	$(DC) up --build frontend backend db
@@ -16,6 +16,9 @@ backend-shell:
 
 frontend-shell:
 	$(DC) exec frontend sh
+
+backend-lint:
+	cd backend && python -m ruff check app tests
 
 backend-test:
 	cd backend && python -m pytest tests
@@ -34,3 +37,10 @@ docs-build:
 
 docs-serve:
 	python -m mkdocs serve
+
+ci-local:
+	$(MAKE) backend-lint
+	$(MAKE) backend-test
+	$(MAKE) frontend-build
+	$(MAKE) docs-build
+	$(DC) config

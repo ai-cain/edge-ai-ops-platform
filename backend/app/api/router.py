@@ -2,7 +2,6 @@ from fastapi import APIRouter
 
 from app.api.routes import ai_events, auth, devices, health, inspections, telemetry
 
-
 api_router = APIRouter()
 api_router.include_router(health.router)
 api_router.include_router(auth.router)

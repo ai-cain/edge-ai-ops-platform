@@ -3,7 +3,6 @@ from fastapi import APIRouter
 from app.schemas.auth import AuthStatus, TokenRequest, TokenResponse
 from app.services.auth_service import get_auth_status, issue_access_token
 
-
 router = APIRouter(prefix="/auth", tags=["auth"])
 
 

@@ -76,6 +76,38 @@ make dev
 - API docs: `http://localhost:8000/docs`
 - docs site: `python -m mkdocs serve`
 
+## Quality And CI
+
+Local quality checks:
+
+```bash
+make ci-local
+```
+
+CI is defined in `.github/workflows/ci.yml` and validates:
+
+- backend lint
+- backend tests
+- frontend build
+- docs build
+- Docker Compose configuration
+
+## Deployment
+
+The repository includes a Render starter in `render.yaml`.
+
+That starter is intended as a first deployment path for:
+
+- backend web service
+- frontend static site
+
+Production deployment still needs:
+
+- managed PostgreSQL
+- real auth and secrets
+- database-backed services instead of bootstrap sample data
+- final domain and CORS configuration
+
 ## Next Steps
 
 1. Replace bootstrap sample data with database-backed services.
@@ -92,3 +124,4 @@ Project docs live in `docs/`.
 - [Architecture](docs/architecture.md)
 - [Backend](docs/backend.md)
 - [Frontend](docs/frontend.md)
+- [Deployment](docs/deployment.md)

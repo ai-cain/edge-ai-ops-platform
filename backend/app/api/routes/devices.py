@@ -3,7 +3,6 @@ from fastapi import APIRouter
 from app.schemas.device import DeviceDetail, DeviceSummary
 from app.services.devices_service import get_device, list_devices
 
-
 router = APIRouter(prefix="/devices", tags=["devices"])
 
 
