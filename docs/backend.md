@@ -22,7 +22,18 @@ The backend will expose modular API routes for operational domains instead of a 
 
 - health
 - auth
+- engine
 - devices
 - telemetry
 - ai-events
 - inspections
+- ingest
+
+## Runtime strategy
+
+The backend supports two patterns:
+
+- embedded runtime mode
+- external runtime mode for Python, C++, or any other language
+
+That keeps the frontend contract stable while letting the engine implementation vary.

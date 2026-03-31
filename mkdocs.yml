@@ -25,6 +25,7 @@ nav:
   - Home: index.md
   - Getting Started: getting-started.md
   - Architecture: architecture.md
+  - Engine Integration: engine-integration.md
   - Backend: backend.md
   - Frontend: frontend.md
   - Deployment: deployment.md

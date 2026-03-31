@@ -8,7 +8,7 @@ import {
 import { NavLink, Outlet } from "react-router-dom";
 
 import { Card } from "@/components/ui/Card";
-import { useAuthStatus } from "@/lib/api";
+import { useAuthStatus, useEngineStatus } from "@/lib/api";
 import { cn } from "@/lib/utils";
 
 
@@ -23,6 +23,7 @@ const links = [
 
 export function AppShell() {
   const authStatus = useAuthStatus();
+  const engineStatus = useEngineStatus();
 
   return (
     <div className="min-h-screen bg-mist text-ink">
@@ -62,6 +63,16 @@ export function AppShell() {
             </p>
             <p className="mt-2 text-sm leading-6 text-white/70">
               {authStatus.data?.notes ?? "Checking bootstrap auth mode for the platform shell."}
+            </p>
+          </div>
+
+          <div className="mt-4 rounded-[24px] border border-white/10 bg-white/6 p-4">
+            <p className="font-mono text-xs uppercase tracking-[0.18em] text-white/55">Engine contract</p>
+            <p className="mt-3 text-sm font-semibold">
+              {engineStatus.data?.mode ?? "loading"} / {engineStatus.data?.engine_language ?? "runtime"}
+            </p>
+            <p className="mt-2 text-sm leading-6 text-white/70">
+              {engineStatus.data?.frontend_contract ?? "Frontend clients always call the backend API."}
             </p>
           </div>
         </aside>

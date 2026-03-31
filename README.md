@@ -55,6 +55,25 @@ The current scaffold already includes:
 - Docker Compose workflow for backend, frontend, and PostgreSQL
 - reusable folders for IoT and applied AI domains
 
+## Engine Integration Modes
+
+The frontend always calls the backend API.
+
+This repository now supports two runtime patterns:
+
+1. `embedded`
+   The runtime lives inside the backend process.
+2. `external`
+   A Python, C++, or any other runtime pushes data into backend ingest endpoints while the frontend still talks only to the backend.
+
+Key routes:
+
+- `GET /api/v1/engine/status`
+- `POST /api/v1/ingest/devices`
+- `POST /api/v1/ingest/telemetry`
+- `POST /api/v1/ingest/ai-events`
+- `POST /api/v1/ingest/inspections`
+
 ## Quick Start
 
 ### 1. Create the environment file
@@ -122,6 +141,7 @@ Project docs live in `docs/`.
 - [Docs home](docs/index.md)
 - [Getting started](docs/getting-started.md)
 - [Architecture](docs/architecture.md)
+- [Engine integration](docs/engine-integration.md)
 - [Backend](docs/backend.md)
 - [Frontend](docs/frontend.md)
 - [Deployment](docs/deployment.md)

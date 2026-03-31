@@ -7,6 +7,16 @@ export type AuthStatus = {
   notes: string;
 };
 
+export type EngineStatus = {
+  mode: string;
+  engine_name: string;
+  engine_language: string;
+  transport: string;
+  frontend_contract: string;
+  ingest_enabled: boolean;
+  notes: string;
+};
+
 export type DeviceSummary = {
   id: string;
   name: string;
@@ -74,6 +84,11 @@ export function getDevices(): Promise<DeviceSummary[]> {
 }
 
 
+export function getEngineStatus(): Promise<EngineStatus> {
+  return request<EngineStatus>("/engine/status");
+}
+
+
 export function getTelemetry(): Promise<TelemetrySeries[]> {
   return request<TelemetrySeries[]>("/telemetry/latest");
 }
@@ -93,5 +108,13 @@ export function useAuthStatus() {
   return useQuery({
     queryKey: ["auth-status"],
     queryFn: getAuthStatus,
+  });
+}
+
+
+export function useEngineStatus() {
+  return useQuery({
+    queryKey: ["engine-status"],
+    queryFn: getEngineStatus,
   });
 }

@@ -1,4 +1,5 @@
 from functools import lru_cache
+from typing import Literal
 
 from pydantic import Field
 from pydantic_settings import BaseSettings, SettingsConfigDict
@@ -7,6 +8,10 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 class Settings(BaseSettings):
     app_name: str = "Edge AI Ops Platform API"
     api_prefix: str = "/api/v1"
+    engine_mode: Literal["embedded", "external"] = "embedded"
+    engine_name: str = "python-vision-runtime"
+    engine_language: str = "python"
+    engine_transport: str = "in-process"
     database_url: str = Field(
         default="postgresql+psycopg://edgeops:edgeops@localhost:5432/edge_ai_ops"
     )

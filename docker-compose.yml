@@ -18,6 +18,10 @@ services:
     environment:
       APP_NAME: Edge AI Ops Platform API
       API_PREFIX: /api/v1
+      ENGINE_MODE: ${ENGINE_MODE:-embedded}
+      ENGINE_NAME: ${ENGINE_NAME:-python-vision-runtime}
+      ENGINE_LANGUAGE: ${ENGINE_LANGUAGE:-python}
+      ENGINE_TRANSPORT: ${ENGINE_TRANSPORT:-in-process}
       DATABASE_URL: postgresql+psycopg://${POSTGRES_USER:-edgeops}:${POSTGRES_PASSWORD:-edgeops}@db:5432/${POSTGRES_DB:-edge_ai_ops}
       CORS_ORIGINS: "[\"http://localhost:${FRONTEND_PORT:-5173}\"]"
     ports:
