@@ -17,3 +17,12 @@ The backend will expose modular API routes for operational domains instead of a 
 - service layer for business logic
 - SQLAlchemy models and session helpers
 - Pydantic schemas for request and response contracts
+
+## Current scaffold routes
+
+- health
+- auth
+- devices
+- telemetry
+- ai-events
+- inspections

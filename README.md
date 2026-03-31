@@ -47,19 +47,41 @@ edge-ai-ops-platform/
 
 ## Current Status
 
-This repository is being scaffolded as a reusable base. The first milestone sets up:
+The current scaffold already includes:
 
 - project identity and documentation
-- backend and frontend app skeletons
-- local Docker workflow
-- modular folders for IoT and applied AI domains
+- FastAPI backend with modular domain routes
+- React frontend shell with operator-focused pages
+- Docker Compose workflow for backend, frontend, and PostgreSQL
+- reusable folders for IoT and applied AI domains
+
+## Quick Start
+
+### 1. Create the environment file
+
+```powershell
+Copy-Item .env.example .env
+```
+
+### 2. Start the local stack
+
+```bash
+make dev
+```
+
+### 3. Open the services
+
+- frontend: `http://localhost:5173`
+- backend: `http://localhost:8000`
+- API docs: `http://localhost:8000/docs`
+- docs site: `python -m mkdocs serve`
 
 ## Next Steps
 
-1. Scaffold backend modules and API surface.
-2. Scaffold frontend shell and domain pages.
-3. Wire Docker-based local development.
-4. Add typed API contracts, tests, and docs.
+1. Replace bootstrap sample data with database-backed services.
+2. Add authentication flows and role-aware actions.
+3. Expand device, telemetry, event, and inspection workflows.
+4. Add typed mutations, tests, and realtime streams.
 
 ## Documentation
 

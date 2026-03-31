@@ -38,3 +38,13 @@ frontend/
     routes/
     lib/
 ```
+
+## Active backend routes
+
+- `/api/v1/health`
+- `/api/v1/auth/status`
+- `/api/v1/auth/token`
+- `/api/v1/devices`
+- `/api/v1/telemetry/latest`
+- `/api/v1/ai-events`
+- `/api/v1/inspections`

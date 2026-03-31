@@ -18,3 +18,11 @@ The frontend is the main product surface for this repository.
 - typed API client
 - TanStack Query for server state
 - WebSocket hooks for live updates
+
+## Current scaffold pages
+
+- overview
+- devices
+- telemetry
+- ai-events
+- inspections
